@@ -1,32 +1,72 @@
 #include <iostream>
+#include<string>
 using namespace std;
-#include<vector>
-int missingValues(vector<int> &x)
+string conCatenate(string x,string y)
 {
-    int size=x.size()-1;
-    int st=0;
-    int end=size;
-    int y=x[0];
-    while (st<=end)
+    return x+y;
+}
+string reverse(string a){
+    int length=a.length();
+    for(int i=length;i>=0;i--)
     {
-        int mid=st+((-st+end)/2);
-        if(x[mid]-x[0]==mid)
-        {
-            st=mid+1;
-        }
-        else{
-            end=mid-1;
+        cout<<a[i];
+    }
+
+}
+string deleteVowels(const string &a)
+{
+    string result="";
+    for(char c:a)
+    {
+        
+        if(!(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='A'||c=='E'||c=='I'||c=='O'||c=='U')){
+            result+=c;
+
         }
     }
-    return st+y;
-    
+    return result;
 
+}
+string sortStringWithoutSort(const string &s) {
+    int freq[256] = {0};  // frequency array for all ASCII chars
+
+    // Count frequency of each character
+    for (char c : s) {
+        freq[(unsigned char)c]++;
+    }
+
+    // Rebuild string in alphabetical order
+    string result = "";
+    for (int i = 0; i < 256; i++) {
+        while (freq[i] > 0) {
+            result += (char)i;
+            freq[i]--;
+        }
+    }
+    return result;
+}
+
+string toLowerCase(string s) {
+    for (char &c : s) {
+        if (c >= 'A' && c <= 'Z') {
+            c = c + 32;   // convert to lowercase
+        }
+    }
+    return s;
 }
 
 int main() {
+    string x="Takshit";
+    string y="Mahajan";
+    // cout<<x+y;
+    string a=conCatenate(x,y);
+    cout<<a;
+    cout<<endl;
     // Your code here
-    vector<int> arr={1,2,3,4,6,7};
-    int result=missingValues(arr);
+    reverse(x);
+    cout<<endl;
+    string result=deleteVowels(x);
     cout<<result;
+    
     return 0;
 }
