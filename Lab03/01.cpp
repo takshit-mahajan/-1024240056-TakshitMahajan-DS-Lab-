@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define MAX 5  // maximum size of stack
+#define MAX 5  
 
 class Stack {
     int arr[MAX];
