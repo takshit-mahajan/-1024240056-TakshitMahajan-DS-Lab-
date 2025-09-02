@@ -12,14 +12,14 @@ int precedence(char op) {
 }
 
 bool isRightAssociative(char op) {
-    return (op == '^'); // ^ is right associative
+    return (op == '^'); 
 }
 
 string conversionPostFix(string infix){
     stack<char> que;
     string result="";
 
-    // Pushing my start.
+   
     que.push('(');
     infix+=')';
 
