@@ -1,30 +1,25 @@
-// Given a string, reverse it using STACK. For example “DataStructure” should be output as “erutcurtSataD.”
-
 #include <iostream>
 #include<stack>
 #include<string>
-#include<vector>
 using namespace std;
 
-string reverseString(const string &str) {
-    stack<char> s;     
-    for(char ch : str) {
-        s.push(ch);
+stack<char> result;
+void reverseString(string name){
+    for(int i=0;i<name.length();i++){
+        result.push(name[i]);
+
+
     }
-    
-    string result = "";
-    while(!s.empty()) {
-        result += s.top();
-        s.pop();
+    while(result.empty()==false){
+        cout<<result.top();
+        result.pop();
     }
-    
-    return result;
 }
+
 
 int main() {
     // Your code here
     string x="Takshit";
-    string output=reverseString(x);
-    cout<<output;
+    reverseString(x);
     return 0;
 }
